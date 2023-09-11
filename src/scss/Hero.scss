@@ -1,0 +1,52 @@
+@import "colors.scss";
+
+#hero {
+  height: 100%;
+  height: 100vh;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 525px) {
+    font-size: 10px;
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3em;
+
+    .logo {
+      width: 10em;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: $yellow;
+    }
+
+    .mouse {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 2.5em;
+      color: $yellow;
+      animation: 0.5s mouse infinite ease alternate-reverse;
+      transform: translateY(0);
+    }
+  }
+}
+
+@keyframes mouse {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-30%);
+  }
+}

@@ -1,0 +1,47 @@
+@import "colors.scss";
+
+#services {
+  padding: 5em 0;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    color: $yellow;
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+    }
+
+    .services {
+      gap: 3em;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 100%;
+
+        p {
+          font-weight: 500;
+          text-align: center;
+          font-size: 1em;
+        }
+
+        img {
+          width: 100%;
+          border-radius: 0.5em;
+          aspect-ratio: 16/9;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

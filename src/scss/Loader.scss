@@ -1,0 +1,53 @@
+@import "colors.scss";
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  background: $dark;
+  position: absolute;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.loaded {
+    transition: 300ms ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  svg {
+    width: 100px;
+
+    @media screen and (max-width: 768px) {
+      width: 75px;
+    }
+
+    animation: 2s move infinite alternate-reverse;
+
+    #wing {
+      animation: 1s flying infinite ease;
+      transform-origin: center;
+      transform-box: fill-box;
+      transform: rotateY(0deg);
+
+      @keyframes flying {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+    }
+
+    @keyframes move {
+      from {
+        transform: translateY(20%);
+      }
+      to {
+        transform: translateY(-20%);
+      }
+    }
+  }
+}
