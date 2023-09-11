@@ -40,6 +40,8 @@
           border-radius: 0.5em;
           aspect-ratio: 16/9;
           object-fit: cover;
+          pointer-events: none;
+          user-select: none;
         }
       }
     }
